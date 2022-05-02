@@ -1,9 +1,3 @@
----
-Title: All that jazz: The librarian’s song
-Summary: Using q to hack metadata for Apple Music
-Tags: software
----
-
 # All that jazz
 
 ## *The librarian’s song*
@@ -11,6 +5,7 @@ Tags: software
 ![Classic Jazz](./_classic-jazz.jpg)
 
 I wonder sometimes about my partner’s father. The first time we met he launched into a lively discussion of audio recording media: magnetic tape, vinyl and Bakelite discs. I did my best to keep up. But we manage to get along. I sent him a wax cylinder for an Edison phonograph I’d found in a store in a small Texas town. And he sent me 736 WAV files from sixty five LPs of jazz classics. A feast for my Apple Music library.
+But Apple Music needs a little help identifying artsits and song names.
 
 ```txt
 ❯ ls /Volumes/Terry/downloads/wavs
@@ -37,6 +32,18 @@ WAV files don’t hold metadata, but someone had thoughtfully named the files in
 This is the story of how I used q to hack the metadata into Apple Music. Because q is a proprietary language, most q coders know it as a language they learned in order to query large datasets. But q is a general-purpose programming language. The 32-bit interpreter is free for non-commercial use, and it’s a *great* tool for general hacking. And lots of datasets need a little hacking. 
 
 Cleaning up a dataset, finding and fixing problems, is always exploratory, and we’ll get a taste here of just how lively and responsive the q REPL is for this work. We’ll be using qSQL queries but the work will also get us using their functional forms on a few occasions. We shall also discover some ways to prevent Apple Music overriding our metadata.
+
+**Vector programming**
+This work is also an example of functional vector programming in practice.
+There is plenty of iteration in the computations but few signs of it in the code.
+Many of the q primitives, and all qSQL queries, iterate implicitly. 
+Where iteration needs specifying , [iteration operators](https://code.kx.com/q/ref/iterators/) are used, but even these are used sparsely.
+(It is a common qbie error to use iteration operators when iteration is already implicit.)
+There is no use of the `do` or `while` control words, and only a single `if` in the whole script.
+
+Only three functions require multiple lines to define them; the longest has six. 
+
+There is also a preference for [tacit forms](https://en.wikipedia.org/wiki/Tacit_programming) rather than lambdas or setting variables that are read immediately and never used again.
 
 
 ## Strategy
@@ -229,6 +236,7 @@ Note the use of `1 prev\` to return both the boolean and the `prev` of the boole
 This is an example of the [Zen monks](https://community.kx.com/t5/Community-Blogs/Meet-the-Zen-monks/ba-p/11604) idiom, a [tacit](https://en.wikipedia.org/wiki/Tacit_programming) expression.
 Instead of `1 prev` one could write e.g. `{(x;prev x)}` or `(a;)prev a:`. 
 The tacit form allows us to avoid setting a variable never subsequently read or the tiny overhead of a lambda.
+
 It remains only to use the mask to partition the line, and extract the second and fourth items.
 ```q
 pl:{@[;1 3] _[;x]where differ (or). 1 prev\(<>)scan x in "<>"} except[;"\t"]@  / parse line
