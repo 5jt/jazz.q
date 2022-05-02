@@ -11,4 +11,6 @@ While q is best known as for writing queries on kdb+ datasets, it is also a gene
 This work is documented in the article “All That Jazz” in [`docs/index.md`](./docs/index.md), first published at [5jt.com](https://www.5jt.com/all-that-jazz-the-librarian-s-song).
 It demonstrates some features of functional vector programming.
 
+The article is also posted for discussion on the [KX Community](https://community.kx.com/t5/General/All-that-jazz-The-librarian-s-song/td-p/12443).
+
 
