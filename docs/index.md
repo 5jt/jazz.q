@@ -5,7 +5,7 @@
 ![Classic Jazz](./_classic-jazz.jpg)
 
 I wonder sometimes about my partner’s father. The first time we met he launched into a lively discussion of audio recording media: magnetic tape, vinyl and Bakelite discs. I did my best to keep up. But we manage to get along. I sent him a wax cylinder for an Edison phonograph I’d found in a store in a small Texas town. And he sent me 736 WAV files from sixty five LPs of jazz classics. A feast for my Apple Music library.
-But Apple Music needs a little help identifying artsits and song names.
+But Apple Music needs a little help identifying artists and song names.
 
 ```txt
 ❯ ls /Volumes/Terry/downloads/wavs
