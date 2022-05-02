@@ -1,0 +1,28 @@
+Track ID,integer
+Album,string
+Genre,string
+Kind,string
+Size,integer
+Total Time,integer
+Disc Count,integer
+Date Modified,date
+Date Added,date
+Bit Rate,integer
+Sample Rate,integer
+Normalization,integer
+Compilation,boolean
+Persistent ID,string
+Track Type,string
+Location,string
+File Folder Count,integer
+Library Folder Count,integer
+Play Count,integer
+Play Date,date
+Play Date UTC,date
+Artist,string
+Year,integer
+Disc Number,integer
+Track Number,integer
+Track Count,integer
+Name,string
+Comments,string
