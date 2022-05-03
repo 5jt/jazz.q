@@ -582,6 +582,8 @@ Again, the feedback loop for finding and fixing problems is very tight, maintain
 
 If your work with datasets requires you from time to time to clean up data, you might find nimble, agile q a helpful tool for the job.
 
+You can [comment on this article](https://community.kx.com/t5/General/All-that-jazz-The-librarian-s-song/td-p/12443) in the KX Community.
+
 
 ## `jazz.q`
 
